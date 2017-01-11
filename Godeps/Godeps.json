@@ -1,0 +1,26 @@
+{
+	"ImportPath": "masterjulz/hhz-photon",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v74",
+	"Deps": [
+		{
+			"ImportPath": "github.com/eclipse/paho.mqtt.golang",
+			"Comment": "v1.0.0-10-g13afcbe",
+			"Rev": "13afcbe8e41508479762a90e9242577210c2ca8d"
+		},
+		{
+			"ImportPath": "github.com/eclipse/paho.mqtt.golang/packets",
+			"Comment": "v1.0.0-10-g13afcbe",
+			"Rev": "13afcbe8e41508479762a90e9242577210c2ca8d"
+		},
+		{
+			"ImportPath": "github.com/gorilla/websocket",
+			"Comment": "v1.0.0-20-ga69d25b",
+			"Rev": "a69d25be2fe2923a97c2af6849b2f52426f68fc0"
+		},
+		{
+			"ImportPath": "golang.org/x/net/websocket",
+			"Rev": "07b51741c1d6423d4a6abab1c49940ec09cb1aaf"
+		}
+	]
+}
