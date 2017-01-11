@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"masterjulz/hhz-photon/config"
 	"masterjulz/hhz-photon/wiot"
 	"net/http"
 	"os"
@@ -102,7 +103,8 @@ func main() {
 		port = DEFAULT_PORT
 	}
 
-	conf := getConfig()
+	conf := config.Get()
+
 	wiot := wiot.New(
 		conf.Url,
 		conf.Topic,
