@@ -39,10 +39,10 @@
 
       		var chart = new CanvasJS.Chart("chartContainer",{
       			title: {
-      				text: "physical likes"
+      				text: "Lecture Voting"
       			},
       			axisY: {
-      				suffix: " C"
+      				suffix: " votes"
       			},
       			legend :{
       				verticalAlign: 'bottom',
