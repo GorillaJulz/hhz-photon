@@ -9,7 +9,7 @@
   };
 
    var connect = function() {
-     ws = new WebSocket("ws://"+ window.location.host + "/ws");
+     ws = new WebSocket("ws://hhz-photon.eu-gb.mybluemix.net/ws");
 
      ws.onopen = function (e) {
        messageHandler.hello();
