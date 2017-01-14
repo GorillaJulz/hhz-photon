@@ -41,10 +41,10 @@
 
 
       		//initial value of dataPoints
-      		// var arguments = [
-      		// {button: "like", count: 5, time: 'green'},
-          //
-      		// ];
+      		var dps = [
+      		{button: "like", count: 5, time: 'green'},
+          {button: "dislike", count: 5, time: 'red'}
+      		];
 
       		var chart = new CanvasJS.Chart("chartContainer",{
       			title: {
@@ -113,6 +113,6 @@
       			chart.render();
       		};
 
-      		//updateChart(arguments);
+      		//updateChart();
        }
 })();
