@@ -6,13 +6,6 @@
       function dashCtrl() {
 
         var dctr = this;
-        dctr.like = 1;
-        dctr.dlike = 2;
-        dctr.kitchenl = 2;
-        dctr.kitchend = 4;
-
-        console.log("do somthing "+dctr.like);
-        console.log("hallo");
 
         var connect = function() {
 
@@ -38,12 +31,10 @@
           };
         };
 
-
-
       		//initial value of dataPoints
       		var dps = [
-      		{button: "like", count: 5, color: 'green'},
-          {button: "dislike", count: 5, color: 'red'}
+        		{button: "like", count: 5, color: 'green'},
+            {button: "dislike", count: 5, color: 'red'}
       		];
 
       		var chart = new CanvasJS.Chart("chartContainer",{
@@ -67,20 +58,13 @@
       			]
       		});
 
-
-      //		var updateInterval = 1000;
-
-
       		var updateChart = function (data) {
               switch (data.button) {
                 case 'like':
                   dps[0] = {label: data.button , y: data.count, color: 'green'};
-                  dctr.like = data.count;
-
                   break;
                 case 'dislike':
                   dps[1] = {label: data.button , y: data.count, color: 'red'};
-                  dctr.dlike = data.count;
                   break;
                 default:
 
