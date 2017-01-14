@@ -29,6 +29,8 @@
 
           ws.onmessage = function (e) {
             console.log("onmessage:", arguments);
+            var data = JSON.parse(e.data);
+            	updateChart(data.data);
           };
 
           ws.onerror = function (e) {
@@ -39,11 +41,10 @@
 
 
       		//initial value of dataPoints
-      		var dps = [
-      		{label: "like", y: 5, boilerColor: 'green'},
-      		{label: "dislike", y: 6, boilerColor: 'red'},
-
-      		];
+      		// var arguments = [
+      		// {button: "like", count: 5, time: 'green'},
+          //
+      		// ];
 
       		var chart = new CanvasJS.Chart("chartContainer",{
       			title: {
@@ -67,13 +68,28 @@
       		});
 
 
-      		var updateInterval = 1000;
+      //		var updateInterval = 1000;
 
 
-      		var updateChart = function () {
+      		var updateChart = function (data) {
+              switch (data.button) {
+                case 'like':
+                  dps[0] = {label: data.button , y: data.count, color: 'green'};
+                  dctr.like = data.count;
 
-      			for (var i = 0; i <1; i++) {
+                  break;
+                case 'dislike':
+                  dps[1] = {label: dps[1].label , y: dps[1].y, color: 'red'};
+                  dctr.dlike = data.count;
+                  break;
+                default:
 
+              }
+
+
+
+      			// for (var i = 0; i <1; i++) {
+            //
       				// // generating random variation deltaY
       				// var deltaY = Math.round(2 + Math.random() *(-2-2));
       				// var yVal = deltaY + dps[i].y > 0 ? dps[i].y + deltaY : 0;
@@ -90,13 +106,13 @@
               //
 
       				// updating the dataPoint
-      				dps[i] = {label: dps[i].label , y: dps[i].y, color: dps[i].boilerColor};
-
-      			};
+      			// 	dps[i] = {label: dps[i].label , y: dps[i].y, color: dps[i].boilerColor};
+            //
+      			// };
 
       			chart.render();
       		};
 
-      		updateChart();
+      		//updateChart(arguments);
        }
 })();
