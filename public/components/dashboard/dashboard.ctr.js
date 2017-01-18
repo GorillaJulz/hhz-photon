@@ -118,7 +118,7 @@
                 default:
 
               }
-            chart.render();
+            chart2.render();
           };
 
           function initChart() {
