@@ -100,6 +100,26 @@
       			chart.render();
       		};
 
+          var updateChart2 = function (data) {
+              switch (data.button) {
+                case 'wc':
+                  dps[0] = {label: data.button , y: data.count, color: 'green'};
+                  break;
+                case 'coffe':
+                  dps[1] = {label: data.button , y: data.count, color: 'red'};
+                  break;
+                case 'meal':
+                  dps[2] = {label: data.button , y: data.count, color: 'orange'};
+                  break;
+                case 'smoke':
+                  dps[3] = {label: data.button , y: data.count, color: 'yellow'};
+                  break;
+                default:
+
+              }
+            chart.render();
+          };
+
           function initChart() {
             for (var i = 0; i <1; i++) {
             	dps[i] = {label: dps[i].button , y: dps[i].count, color: dps[i].color};
