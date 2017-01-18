@@ -21,6 +21,10 @@ const (
 
 var likeCount = 0
 var dislikeCount = 0
+var smokeCount = 0
+var mealCount = 0
+var wcCount = 0
+var coffeeCount = 0
 
 var upgrader = websocket.Upgrader{
 	ReadBufferSize:  1024,
@@ -72,6 +76,26 @@ func WSHandler(w http.ResponseWriter, r *http.Request, ch chan string) {
 				d.Count = dislikeCount
 				d.Time = t
 				fmt.Println("dislikes", dislikeCount)
+			case "smoke":
+				likeCount += 1
+				d.Count = smokeCount
+				d.Time = t
+				fmt.Println("smoke count:", likeCount)
+			case "coffee":
+				dislikeCount += 1
+				d.Count = coffeeCount
+				d.Time = t
+				fmt.Println("coffee count", dislikeCount)
+			case "meal":
+				likeCount += 1
+				d.Count = mealCount
+				d.Time = t
+				fmt.Println("meal count", likeCount)
+			case "wc":
+				dislikeCount += 1
+				d.Count = wcCount
+				d.Time = t
+				fmt.Println("wc count", dislikeCount)
 			}
 
 			err = conn.WriteJSON(Message{Type: "Photon", Data: d})

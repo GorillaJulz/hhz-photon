@@ -52,7 +52,7 @@
       			{
       				type: "column",
       				bevelEnabled: true,
-      				indexLabel: "{y} C",
+      				indexLabel: "{y} votes",
       				dataPoints: dps
       			}
       			]

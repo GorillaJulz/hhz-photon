@@ -29,6 +29,18 @@
          case "dislike":
            document.getElementById('dislike-count').innerHTML = data.data.count;
            break;
+         case "wc":
+           document.getElementById('wc-count').innerHTML = data.data.count;
+           break;
+         case "meal":
+           document.getElementById('meal-count').innerHTML = data.data.count;
+           break;
+         case "smoke":
+           document.getElementById('smoke-count').innerHTML = data.data.count;
+           break;
+         case "coffee":
+           document.getElementById('coffee-count').innerHTML = data.data.count;
+           break;
        }
 
      };
