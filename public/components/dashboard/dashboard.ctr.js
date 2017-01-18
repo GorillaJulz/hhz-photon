@@ -40,7 +40,7 @@
 
           var dps2 = [
         		{button: "wc", count: 1, color: 'green'},
-            {button: "coffe", count: 1, color: 'red'},
+            {button: "coffee", count: 1, color: 'red'},
             {button: "meal", count: 1, color: 'orange'},
             {button: "smoke", count: 1, color: 'yellow'}
       		];
@@ -106,7 +106,7 @@
                 case 'wc':
                   dps2[0] = {label: data.button , y: data.count, color: 'green'};
                   break;
-                case 'coffe':
+                case 'coffee':
                   dps2[1] = {label: data.button , y: data.count, color: 'red'};
                   break;
                 case 'meal':
