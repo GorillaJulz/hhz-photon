@@ -37,6 +37,13 @@
             {button: "dislike", count: 5, color: 'red'}
       		];
 
+          var dps2 = [
+        		{button: "wc", count: 5, color: 'green'},
+            {button: "coffe", count: 5, color: 'red'},
+            {button: "meal", count: 5, color: 'orange'},
+            {button: "smoke", count: 5, color: 'yellow'}
+      		];
+
       		var chart = new CanvasJS.Chart("chartContainer",{
       			title: {
       				text: "Lecture Voting"
@@ -57,6 +64,27 @@
       			}
       			]
       		});
+
+          var chart2 = new CanvasJS.Chart("chartContainerBreak",{
+            title: {
+              text: "Breaktime Voting"
+            },
+            axisY: {
+              suffix: " votes"
+            },
+            legend :{
+              verticalAlign: 'bottom',
+              horizontalAlign: "center"
+            },
+            data: [
+            {
+              type: "column",
+              bevelEnabled: true,
+              indexLabel: "{y} votes",
+              dataPoints: dps2
+            }
+            ]
+          });
 
       		var updateChart = function (data) {
               switch (data.button) {
@@ -79,7 +107,15 @@
             chart.render();
           }
 
+          function initChart2() {
+            for (var i = 0; i <1; i++) {
+            	dps2[i] = {label: dps2[i].button , y: dps2[i].count, color: dps2[i].color};
+            }
+            chart2.render();
+          }
+
       		initChart(dps);
+          initChart2(dps2);
           connect();
        }
 })();
