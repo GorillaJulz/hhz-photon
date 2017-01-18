@@ -34,15 +34,15 @@
 
       		//initial value of dataPoints
       		var dps = [
-        		{button: "like", count: 5, color: 'green'},
-            {button: "dislike", count: 5, color: 'red'}
+        		{button: "like", count: 2, color: 'green'},
+            {button: "dislike", count: 2, color: 'red'}
       		];
 
           var dps2 = [
-        		{button: "wc", count: 5, color: 'green'},
-            {button: "coffe", count: 5, color: 'red'},
-            {button: "meal", count: 5, color: 'orange'},
-            {button: "smoke", count: 5, color: 'yellow'}
+        		{button: "wc", count: 1, color: 'green'},
+            {button: "coffe", count: 1, color: 'red'},
+            {button: "meal", count: 1, color: 'orange'},
+            {button: "smoke", count: 1, color: 'yellow'}
       		];
 
       		var chart = new CanvasJS.Chart("chartContainer",{
@@ -104,16 +104,16 @@
           var updateChart2 = function (data) {
               switch (data.button) {
                 case 'wc':
-                  dps[0] = {label: data.button , y: data.count, color: 'green'};
+                  dps2[0] = {label: data.button , y: data.count, color: 'green'};
                   break;
                 case 'coffe':
-                  dps[1] = {label: data.button , y: data.count, color: 'red'};
+                  dps2[1] = {label: data.button , y: data.count, color: 'red'};
                   break;
                 case 'meal':
-                  dps[2] = {label: data.button , y: data.count, color: 'orange'};
+                  dps2[2] = {label: data.button , y: data.count, color: 'orange'};
                   break;
                 case 'smoke':
-                  dps[3] = {label: data.button , y: data.count, color: 'yellow'};
+                  dps2[3] = {label: data.button , y: data.count, color: 'yellow'};
                   break;
                 default:
 
