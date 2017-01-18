@@ -24,6 +24,7 @@
             console.log("onmessage:", arguments);
             var data = JSON.parse(e.data);
             	updateChart(data.data);
+              updateChart2(data.data);
           };
 
           ws.onerror = function (e) {
@@ -124,6 +125,8 @@
             for (var i = 0; i <1; i++) {
             	dps[i] = {label: dps[i].button , y: dps[i].count, color: dps[i].color};
             }
+            // dps[0] = {label: dps[0].button , y: dps[o].count, color: dps[0].color};
+            // dps[1] = {label: dps[1].button , y: dps[1].count, color: dps[1].color};
             chart.render();
           }
 
